@@ -44,11 +44,11 @@ curl -k https://apigw.f5demos.com:8443/api/f1/circuits | jq
 # ----------------------------
 
 # Try normal access
-curl -k https://apigw.f5demos.com:8443/get
+curl -k https://apigw.f5demos.com:8443/get | jq
 
 # Repeat this quickly (2+ per second) to trigger rate limit (429)
-curl -k https://apigw.f5demos.com:8443/get
-curl -k https://apigw.f5demos.com:8443/get
+curl -k https://apigw.f5demos.com:8443/get | jq
+curl -k https://apigw.f5demos.com:8443/get | jq
 
 
 # ----------------------------
