@@ -1,8 +1,14 @@
-# NGINX Plus as API Gateway Demo
+# NGINX Plus as API Gateway Samples
 
 ## 🔰 Introduction to NGINX
 
-NGINX is a high-performance web server, reverse proxy, and load balancer. While it originally served static content and handled HTTP traffic efficiently, it has evolved into a powerful platform for advanced routing capabilities, multi protocol support (HTTP2/3, TCP, UDP, gRPC, WebSocket, MQTT), customization through embedded Javascript (NJS) and security with NGINX App Protect.
+NGINX is a high-performance web server, reverse proxy, and load balancer that has evolved into a powerful API platform with capabilities such as:
+- Advanced routing with fine-grained traffic control using path-based routing, rewrites, and regex matching
+- Multi-protocol support including HTTP/1.1, HTTP/2, HTTP/3, TCP, UDP, gRPC, WebSocket, and MQTT
+- Embedded JavaScript (NJS) for dynamic request/response transformation and logic injection
+- Authentication and authorization support for JWT, OpenID Connect (OIDC), SAML, and OAuth 2.0
+- Integrated security with web application firewall features powered by NGINX App Protect
+- Observability and metrics export via OpenTelemetry, Prometheus integration, and the NGINX Plus API
 
 With **NGINX Plus**, the commercial version of NGINX, advanced features like health checks, session persistence, key-value store, built-in monitoring, and enhanced security modules become available—making it an ideal solution for modern API Gateway use cases.
 
