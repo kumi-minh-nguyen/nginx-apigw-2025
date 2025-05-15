@@ -1,0 +1,108 @@
+## NGINX Plus API Gateway – Test Guide
+
+This guide contains `curl` commands to test every API gateway feature configured in your NGINX Plus setup.
+
+The API gateway is running at:  
+**https://localhost:8443**
+
+---
+
+## Test All Features
+
+```bash
+# ----------------------------
+# 1. Basic Proxy Routes
+# ----------------------------
+
+# Get list of F1 drivers
+curl -k https://localhost:8443/api/f1/drivers
+
+# Get list of F1 seasons
+curl -k https://localhost:8443/api/f1/seasons
+
+# Get list of F1 circuits
+curl -k https://localhost:8443/api/f1/circuits
+
+
+# ----------------------------
+# 2. Load Balancing & Rate Limit Demo
+# ----------------------------
+
+# Try normal access
+curl -k https://localhost:8443/get
+
+# Repeat this quickly (2+ per second) to trigger rate limit (429)
+curl -k https://localhost:8443/get
+curl -k https://localhost:8443/get
+
+
+# ----------------------------
+# 3. Regex URI Rewrite
+# ----------------------------
+
+# Matches /delay/1 and rewrites internally to /drivers
+curl -k https://localhost:8443/delay/1
+
+
+# ----------------------------
+# 4. API Key Authentication (Static Map)
+# ----------------------------
+
+# Valid API key (client_one)
+curl -k https://localhost:8443/post \
+  -H "X-API-Key: P5FcvLwkyN7eethF"
+
+# Invalid key → should return 403
+curl -k https://localhost:8443/post \
+  -H "X-API-Key: wrongkey"
+
+# Missing key → should return 401
+curl -k https://localhost:8443/post
+
+
+# ----------------------------
+# 5. JWT Authentication (Claim-based)
+# ----------------------------
+
+# Replace <your_token> with a JWT containing claim "uid": 222
+curl -k https://localhost:8443/drivers \
+  -H "Authorization: Bearer <your_token>"
+
+# Any other uid or invalid token will return 403
+
+
+# ----------------------------
+# 6. Keyval-based API Key Authentication
+# ----------------------------
+
+# Valid key with value 1 in keyval store
+curl -k https://localhost:8443/anything \
+  -H "X-KV-Api-Key: mykey123"
+
+# Invalid or missing key → 403 Forbidden
+curl -k https://localhost:8443/anything \
+  -H "X-KV-Api-Key: wrongkey"
+
+
+# ----------------------------
+# 7. Mocked OIDC Token Introspection
+# ----------------------------
+
+# Any bearer token will be accepted (mock returns active: true)
+curl -k https://localhost:8443/api/secure \
+  -H "Authorization: Bearer faketoken"
+
+
+# ----------------------------
+# 8. Convert CSV to JSON (via NJS)
+# ----------------------------
+
+# Valid input: Converts | delimited CSV into JSON
+curl -k https://localhost:8443/convert-csv \
+  -X POST -H "Content-Type: text/plain" \
+  --data 'PAT|SG12345|John Tan|1980-12-01|M|A+'
+
+# Invalid input: Fewer fields, triggers error response
+curl -k https://localhost:8443/convert-csv \
+  -X POST -H "Content-Type: text/plain" \
+  --data 'PAT|Too|Short'
