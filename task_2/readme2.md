@@ -3,7 +3,7 @@
 #### Make sure you are root user
 `su -`
 
-#### Copy lb.conf file to that folder
+#### Copy `lb.conf` file to that folder
 `cp /home/ubuntu/nginx-apigw-2025/task_2/lb.conf /etc/nginx/conf.d`
 
 `nginx -t`
