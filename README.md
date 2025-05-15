@@ -21,7 +21,7 @@ This repository provides a complete **NGINX Plus API Gateway demo** that showcas
 ### Key Capabilities Demonstrated:
 
 * **SSL termination**
-* **Load balancing** with sticky session (cookie-based)
+* **Load balancing** 
 * **Rate limiting** to control request floods per client IP
 * **JWT authentication** to validate client identity and access scope
 * **Static and dynamic API key authentication** using `map` and `keyval`
