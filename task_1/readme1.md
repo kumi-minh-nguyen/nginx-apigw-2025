@@ -2,7 +2,7 @@
 #### Make sure you are root user
 `su -`
 
-#### Copy web.conf file to nginx configuration directory
+#### Copy `web.conf` file to nginx configuration directory
 `cp /home/ubuntu/nginx-apigw-2025/task_1/web.conf /etc/nginx/conf.d`
 
 `nginx -t`
