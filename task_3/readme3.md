@@ -30,13 +30,13 @@ The API gateway is running at:
 # ----------------------------
 
 # Get list of F1 drivers
-curl -k https://apigw.f5demos.com:8443/api/f1/drivers
+curl -k https://apigw.f5demos.com:8443/api/f1/drivers | jq
 
 # Get list of F1 seasons
-curl -k https://apigw.f5demos.com:8443/api/f1/seasons
+curl -k https://apigw.f5demos.com:8443/api/f1/seasons | jq
 
 # Get list of F1 circuits
-curl -k https://apigw.f5demos.com:8443/api/f1/circuits
+curl -k https://apigw.f5demos.com:8443/api/f1/circuits | jq
 
 
 # ----------------------------
