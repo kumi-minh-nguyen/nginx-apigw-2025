@@ -100,16 +100,7 @@ curl -k https://apigw.f5demos.com:8443/anything \
 
 
 # ----------------------------
-# 7. Mocked OIDC Token Introspection
-# ----------------------------
-
-# Any bearer token will be accepted (mock returns active: true)
-curl -k https://apigw.f5demos.com:8443/api/secure \
-  -H "Authorization: Bearer faketoken"
-
-
-# ----------------------------
-# 8. Convert CSV to JSON (via NJS)
+# 7. Convert CSV to JSON (via NJS)
 # ----------------------------
 
 # Valid input: Converts | delimited CSV into JSON
