@@ -15,6 +15,8 @@
 
 `cp /home/ubuntu/nginx-apigw-2025/task_3/apigw.conf /etc/nginx/conf.d`
 
+`nginx -t && nginx -s reload`
+
 ---
 
 ## Test Guide
@@ -56,7 +58,7 @@ curl -k https://apigw.f5demos.com:8443/get | jq
 # ----------------------------
 
 # Matches /delay/1 and rewrites internally to /drivers
-curl -k https://apigw.f5demos.com:8443/delay/1
+curl -k https://apigw.f5demos.com:8443/delay/1 | jq
 
 
 # ----------------------------
