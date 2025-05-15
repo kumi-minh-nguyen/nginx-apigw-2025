@@ -50,4 +50,4 @@ Normal traffic will be fine
 
 Script attack will be blocked
 
-`curl 'http://web.f5demos.com:9000/?<script>'`
+`curl 'http://web.f5demos.com:9000/?<script>alert(1)</script>'
