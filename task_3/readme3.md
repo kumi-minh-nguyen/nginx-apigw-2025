@@ -80,8 +80,7 @@ curl -k https://apigw.f5demos.com:8443/post | jq
 # ----------------------------
 
 # Replace <your_token> with a JWT containing claim "uid": 222
-curl -k https://apigw.f5demos.com:8443/drivers \
-  -H "Authorization: Bearer <your_token>"
+TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJ1aWQiOjIyMn0.L7cAao32jKJGKEgdWyfKzDn6FC-3baJv6Rl1E6lGwY0" ; curl -k -H "Authorization: Bearer $TOKEN" https://apigw.f5demos.com:8443/drivers | jq
 
 # Any other uid or invalid token will return 403
 
