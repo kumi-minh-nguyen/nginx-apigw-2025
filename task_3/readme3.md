@@ -7,9 +7,9 @@
 
 `cp /home/ubuntu/nginx-apigw-2025/task_3/csv_to_json.js /etc/nginx`
 
-`cp /home/ubuntu/nginx-apigw-2025/task_3/apigwdemo.com.crt /etc/nginx/conf.d`
+`cp /home/ubuntu/nginx-apigw-2025/task_3/apigwdemo.com.crt /etc/nginx`
 
-`cp /home/ubuntu/nginx-apigw-2025/task_3/apigwdemo.com.key /etc/nginx/conf.d`
+`cp /home/ubuntu/nginx-apigw-2025/task_3/apigwdemo.com.key /etc/nginx`
 
 `cp /home/ubuntu/nginx-apigw-2025/task_3/apisecret.jwk /etc/nginx/conf.d`
 
