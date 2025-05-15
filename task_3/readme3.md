@@ -65,14 +65,14 @@ curl -k https://apigw.f5demos.com:8443/delay/1
 
 # Valid API key (client_one)
 curl -k https://apigw.f5demos.com:8443/post \
-  -H "X-API-Key: P5FcvLwkyN7eethF"
+  -H "X-API-Key: P5FcvLwkyN7eethF" | jq
 
 # Invalid key → should return 403
 curl -k https://apigw.f5demos.com:8443/post \
-  -H "X-API-Key: wrongkey"
+  -H "X-API-Key: wrongkey" | jq
 
 # Missing key → should return 401
-curl -k https://apigw.f5demos.com:8443/post
+curl -k https://apigw.f5demos.com:8443/post | jq
 
 
 # ----------------------------
@@ -92,11 +92,11 @@ curl -k https://apigw.f5demos.com:8443/drivers \
 
 # Valid key with value 1 in keyval store
 curl -k https://apigw.f5demos.com:8443/anything \
-  -H "X-KV-Api-Key: mykey123"
+  -H "X-KV-Api-Key: 2j1PM5rwgt1" | jq
 
 # Invalid or missing key → 403 Forbidden
 curl -k https://apigw.f5demos.com:8443/anything \
-  -H "X-KV-Api-Key: wrongkey"
+  -H "X-KV-Api-Key: wrongkey" | jq
 
 
 # ----------------------------
