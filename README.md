@@ -2,7 +2,7 @@
 
 ## 🔰 Introduction to NGINX
 
-NGINX is a high-performance web server, reverse proxy, and load balancer. While it originally served static content and handled HTTP traffic efficiently, it has evolved into a powerful platform for API management, edge compute, and security.
+NGINX is a high-performance web server, reverse proxy, and load balancer. While it originally served static content and handled HTTP traffic efficiently, it has evolved into a powerful platform for advanced routing capabilities, multi protocol support (HTTP2/3, TCP, UDP, gRPC, WebSocket, MQTT), customization through embedded Javascript (NJS) and security with NGINX App Protect.
 
 With **NGINX Plus**, the commercial version of NGINX, advanced features like health checks, session persistence, key-value store, built-in monitoring, and enhanced security modules become available—making it an ideal solution for modern API Gateway use cases.
 
