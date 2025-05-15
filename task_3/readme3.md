@@ -21,7 +21,7 @@
 
 ## Test Guide
 
-This guide contains `curl` commands to test every API gateway feature configured in your NGINX Plus setup.
+Use `curl` commands to test every API gateway feature configured in your NGINX Plus setup.
 
 The API gateway is running at:  
 **https://apigw.f5demos.com:8443**
