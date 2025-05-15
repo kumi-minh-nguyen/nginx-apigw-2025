@@ -6,9 +6,7 @@
 #### Copy `lb.conf` file to that folder
 `cp /home/ubuntu/nginx-apigw-2025/task_2/lb.conf /etc/nginx/conf.d`
 
-`nginx -t`
-
-`nginx -s reload`
+`nginx -t && nginx -s reload`
 
 #### Test the load balancer from command line
 `curl -I http://web.f5demos.com:9000`
