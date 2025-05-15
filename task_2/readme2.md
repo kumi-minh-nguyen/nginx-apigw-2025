@@ -42,7 +42,6 @@ app_protect_policy_file /etc/app_protect/conf/NginxDefaultPolicy.json;
 app_protect_security_log_enable on;
 app_protect_security_log /opt/app_protect/share/defaults/log_illegal.json /var/log/app_protect/security.log;
 ```
-
 #### Test App Protect
 Normal traffic will be fine
 
@@ -51,3 +50,30 @@ Normal traffic will be fine
 Script attack will be blocked
 
 `curl 'http://web.f5demos.com:9000/?<script>alert(1)</script>'`
+
+#### View security log
+View the first record
+
+```
+grep 'json_log=' /var/log/app_protect/security.log \
+| head -n1 \
+| perl -nE 'if (/json_log="((?:(?!"\,\w+=).)*)"/) { $json=$1; $json =~ s/""/"/g; say $json }' \
+| jq
+```
+
+View the last record
+
+```
+grep 'json_log=' /var/log/app_protect/security.log \
+| tail -n1 \
+| perl -nE 'if (/json_log="((?:(?!"\,\w+=).)*)"/) { $json=$1; $json =~ s/""/"/g; say $json }' \
+| jq
+```
+
+View by Support ID
+
+```
+grep 'json_log=' /var/log/app_protect/security.log \
+| perl -nE 'if (/json_log="((?:(?!"\,\w+=).)*)"/) { $json=$1; $json =~ s/""/"/g; say $json }' \
+| jq 'select(.id == "<Support-ID-goes-here>")'
+```
