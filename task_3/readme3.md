@@ -115,9 +115,9 @@ curl -k https://apigw.f5demos.com:8443/api/secure \
 # Valid input: Converts | delimited CSV into JSON
 curl -k https://apigw.f5demos.com:8443/convert-csv \
   -X POST -H "Content-Type: text/plain" \
-  --data 'PAT|SG12345|John Tan|1980-12-01|M|A+'
+  --data 'PAT|SG12345|John Tan|1980-12-01|M|A+' | jq
 
 # Invalid input: Fewer fields, triggers error response
 curl -k https://apigw.f5demos.com:8443/convert-csv \
   -X POST -H "Content-Type: text/plain" \
-  --data 'PAT|Too|Short'
+  --data 'PAT|Too|Short' | jq
