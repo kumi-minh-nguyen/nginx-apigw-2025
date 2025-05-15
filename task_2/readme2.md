@@ -26,12 +26,16 @@
 #### Go to Firefox, open a new tab and access the dashboard
 `http://web.f5demos.com:8081/dashboard.html`
 
-#### Now we will enable App Protect for NGINX, we will overwrite the original nginx.conf file
+#### Now we will enable App Protect for NGINX, we will overwrite the original `/etc/nginx/nginx.conf` file
+Back up the file first as a good practice
+
 `mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup`
+
+Copy the new file with App Protect loaded
 
 `cp /home/ubuntu/nginx-apigw-2025/task_2/nginx.conf /etc/nginx`
 
-#### In `/etc/nginx/conf.d` folder, open lb.conf and uncomment these lines (removing #) to enable App Protect
+#### Open `/etc/nginx/conf.d/lb.conf` and uncomment these lines (removing #) to enable App Protect
 ```
 app_protect_enable on;
 app_protect_policy_file /etc/app_protect/conf/NginxDefaultPolicy.json;
