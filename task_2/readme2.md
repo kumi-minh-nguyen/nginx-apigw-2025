@@ -24,7 +24,7 @@
 `nginx -s reload`
 
 #### Go to Firefox, open a new tab and access the dashboard
-`http://web.f5demos.com:8081/dashboard.html`
+`http://web.f5demos.com:8084/dashboard.html`
 
 #### Now we will enable App Protect for NGINX, we will overwrite the original `/etc/nginx/nginx.conf` file
 Back up the file first as a good practice
