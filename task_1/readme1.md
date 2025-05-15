@@ -6,9 +6,7 @@
 #### Copy `web.conf` file to nginx configuration directory
 `cp /home/ubuntu/nginx-apigw-2025/task_1/web.conf /etc/nginx/conf.d`
 
-`nginx -t`
-
-`nginx -s reload`
+`nginx -t && nginx -s reload`
 
 #### Test the web hosting from command line
 `curl -I http://web.f5demos.com:9001`
