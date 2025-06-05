@@ -39,6 +39,11 @@ app_protect_policy_file /etc/app_protect/conf/NginxDefaultPolicy.json;
 app_protect_security_log_enable on;
 app_protect_security_log /opt/app_protect/share/defaults/log_illegal.json /var/log/app_protect/security.log;
 ```
+
+`systemctl restart nginx`
+
+`systemctl status nginx`
+
 #### Test App Protect
 Normal traffic will be fine
 
