@@ -18,9 +18,7 @@ In F5 UDF environment, go to Components > NGINX Plus 1 > Access > Web Shell
 #### Next, we will create a dashboard to monitor upstream servers
 `cp /home/ubuntu/nginx-apigw-2025/task_2/dashboard.conf /etc/nginx/conf.d`
 
-`nginx -t`
-
-`nginx -s reload`
+`nginx -t && nginx -s reload`
 
 #### Go to Firefox, open a new tab and access the dashboard
 `http://web.f5demos.com:8084/dashboard.html`
