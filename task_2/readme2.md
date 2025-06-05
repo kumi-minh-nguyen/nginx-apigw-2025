@@ -32,13 +32,26 @@ Copy the new file with App Protect loaded
 
 `cp /home/ubuntu/nginx-apigw-2025/task_2/nginx.conf /etc/nginx`
 
-#### Open `/etc/nginx/conf.d/lb.conf` and uncomment these lines (removing #) to enable App Protect
+#### Open `/etc/nginx/conf.d/lb.conf` and uncomment these lines to enable App Protect
+`vi /etc/nginx/conf.d/lb.conf`
+
+```
+#app_protect_enable on;
+#app_protect_policy_file /etc/app_protect/conf/NginxDefaultPolicy.json;
+#app_protect_security_log_enable on;
+#app_protect_security_log /opt/app_protect/share/defaults/log_illegal.json /var/log/app_protect/security.log;
+```
+
+Remove `#` then press `Esc` `:wq` to save the file
+
 ```
 app_protect_enable on;
 app_protect_policy_file /etc/app_protect/conf/NginxDefaultPolicy.json;
 app_protect_security_log_enable on;
 app_protect_security_log /opt/app_protect/share/defaults/log_illegal.json /var/log/app_protect/security.log;
 ```
+
+Restart NGINX for App Protect to take effect
 
 `systemctl restart nginx`
 
