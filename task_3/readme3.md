@@ -1,4 +1,5 @@
 ## In this task, you will configure NGINX Plus as an API Gateway
+In F5 UDF environment, go to Components > NGINX Plus 1 > Webshell
 
 #### Copy necessary files into nginx setup
 `sudo su -`
