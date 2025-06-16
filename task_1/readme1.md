@@ -1,5 +1,5 @@
 ## In this task, you will use NGINX Plus to serve web content
-In F5 UDF environment, go to Components > NGINX Plus 1 > Access > Web Shell
+In F5 UDF environment, go to Components > NGINX Plus > Access > Web Shell
 
 #### Make sure you are root user
 `su -`
